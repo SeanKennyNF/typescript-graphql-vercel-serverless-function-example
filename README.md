@@ -25,13 +25,13 @@ You can hit the deployed version of this API at https://vercel-graphql-serverles
 ```
 query sampleQuery {
   calgaryLRTStations {
-	  name
-		lines
-	}
+    name
+    lines
+  }
   calgaryRivers {
-		name
-		lengthInKilometers
-	}
+    name
+    lengthInKilometers
+  }
 }
 ```
 
