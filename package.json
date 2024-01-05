@@ -1,0 +1,28 @@
+{
+  "name": "typescript-graphql-vercel-serverless-function-example",
+  "version": "1.0.0",
+  "description": "The goal of this repository is to have a simple working example of a Vercel serverless function that uses GraphQL that is written in TypeScript that others can follow when setting up similar solutions in their own work.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "codegen": "graphql-codegen --config ./codegen.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean Kenny",
+  "type": "module",
+  "dependencies": {
+    "apollo-server-micro": "^3.13.0",
+    "graphql": "^16.8.1",
+    "micro": "^9.4.1",
+    "micro-cors": "^0.1.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/introspection": "^4.0.0",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-resolvers": "^4.0.1",
+    "@types/micro-cors": "^0.1.5",
+    "@types/node": "^20.10.6",
+    "typescript": "^5.3.3"
+  }
+}

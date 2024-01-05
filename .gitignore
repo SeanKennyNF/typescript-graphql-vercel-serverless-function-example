@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+public/dist
+coverage
+node_modules
+dist
+
+# Files containing secret information
+.vercel
+.env*.local
