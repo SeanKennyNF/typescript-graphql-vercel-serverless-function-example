@@ -6,7 +6,7 @@ This example
 - is functional and will work when deployed to Vercel at the time of writing this README
 - makes use of the `@graphql-codegen` to autogenerate types from your GraphQL schema
 - doesn't make use of `vercel.json` fields that Vercel recommends against using at the time of writing this README
-- supports TypeScript (with the exception of /api/graphql.js. I would advise not adding more files to the /api folder)
+- supports TypeScript (with the exception of `/api/graphql.js`. I would advise not adding more files to the `/api` folder since GraphQL servers are only supposed to have one endpoint)
 
 Once this code has hopefully given you something that you can at least run successfully, you can make modifications to this code to suit your own tastes like setting up eslint/prettier, using some other apollo client library you prefer, connecting to SQL/Mongo, or something like that.
 
@@ -14,14 +14,26 @@ If you are encountering any problems following the instructions below, please op
 
 ## Hitting the deployed version of this API
 
-You can hit the deployed version of this API at TODO using Insomnia, Postman, curl, etc.
+You can hit the deployed version of this API at https://vercel-graphql-serverless-function-example.vercel.app/api/graphql using Insomnia, Postman, curl, etc.
 
-## Running the API
+## Running the API locally
 
 1. Clone this repository
 2. Run `npm i`
 3. Run `vercel dev` and follow the instructions there to create the project in Vercel.
-4. Hitting `http://localhost:3000/api/graphql` with a graphql request should work after your build is finished
+4. Hitting `http://localhost:3000/api/graphql` with a graphql request should work after your build is finished. Here's an example query that you can use.
+```
+query sampleQuery {
+  calgaryLRTStations {
+	  name
+		lines
+	}
+  calgaryRivers {
+		name
+		lengthInKilometers
+	}
+}
+```
 
 ## Code generation
 
@@ -30,7 +42,7 @@ You can hit the deployed version of this API at TODO using Insomnia, Postman, cu
 3. Run `npm run codegen`
 4. If you've changed `stub-typedefs.ts` at all, your changes should be reflected in `src/api/graphql-types/__generated__` and `graphql.schema.json`. If you haven't changed the typedefs at all, those files should have stayed the same.
 
-## Vercel automatic deploys from master
+## Vercel automatic deploys from the main branch
 
 You'll want to do this on Vercel's website. After running `vercel dev` for the first time the project should be created and it should just be a matter of linking the github repository and following the instructions there.
 
